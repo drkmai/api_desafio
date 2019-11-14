@@ -33,7 +33,7 @@ public class JwtUserDetailsService implements UserDetailsService
 		UserDAO user = userRepository.findByUsername(username);
 		if (user == null)
 		{
-			throw new UsernameNotFoundException("No se encontro un usuario con ese nombre y/o contraseña: " + username);
+			throw new UsernameNotFoundException("No se encontro un usuario con ese nombre: " + username);
 		}
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				new ArrayList<>());

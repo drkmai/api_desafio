@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.fluxit.desafioTecnico.apidesafio.model.candidato.Candidato;
 
 @Repository
-public interface CandidatoRepository extends JpaRepository/*PagingAndSortingRepository*/<Candidato,Long>{
+public interface CandidatoRepository extends JpaRepository<Candidato,Long>{
 	
 	List<Candidato> findAllByNombreYApellidoContaining(String nombreYApellido, Pageable pageable);
 	List<Candidato> findAllByDniContaining(String dni, Pageable pageable);
